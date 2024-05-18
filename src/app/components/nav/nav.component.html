@@ -1,1 +1,23 @@
-<p>nav works!</p>
+<div id="navbar" class="border-bottom p-1">
+  
+  <div float:left> logo</div>
+
+  <button mat-button color="primary">
+    <a [routerLink]="['']">Home</a>
+  </button>
+  
+  <button mat-button color="primary">
+    <a [routerLink]="['/about']">About</a>
+  </button>
+  
+  <button mat-button color="primary">
+    <a [routerLink]="['/login']">Login</a>
+  </button>
+  
+  <button mat-button color="primary">
+    <span class="material-symbols-outlined"> </span>
+    <a [routerLink]="['/cart']">
+      <span class="material-symbols-outlined"> shopping_cart_checkout</span>
+    </a>
+  </button>
+</div>
