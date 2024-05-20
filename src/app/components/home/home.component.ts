@@ -26,7 +26,9 @@ export class HomeComponent implements OnInit {
   constructor(private service: VehicleService) {}
   ngOnInit(): void {
     this.getVehicles();
-    this.vehiclesCount = this.service.getCount();
+    this.service.getCount().subscribe({
+      next: (v) => (this.vehiclesCount = v),
+    });
   }
 
   getVehicles() {

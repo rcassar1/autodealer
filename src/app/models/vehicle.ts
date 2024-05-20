@@ -1,5 +1,5 @@
 export class Vehicle {
-id: string;
+_id: string;
 make: string;
 model: string;
 kms: string;
@@ -15,7 +15,7 @@ constructor(
     kms: string,
     photoUrl: string,
 ) {
-    this.id = id;
+    this._id = id;
     this.make = make;
     this.model = model;
     this.kms = kms;
