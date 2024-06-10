@@ -1,0 +1,50 @@
+@import '../styles.scss';
+
+.shell{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.content{
+    
+    margin-top: 20px;
+    min-height: 280px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #e4e7e8;
+    border-radius: 25px;
+
+    .grid{
+        margin-left: 20px;
+        
+    }
+
+    &-text{
+        width: 100%;
+        color: var(--surface-700);
+        margin-top: 50px;
+        text-wrap: wrap;
+        padding-bottom: 50px;
+
+        h1{
+            margin: 0;
+            font-size: 3em;
+            font-weight: 400;
+        }
+
+        h2{
+            margin: 0;
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        h3{
+            margin: 0;
+            font-size: 1em;
+            font-weight: 200;
+        }
+    }
+
+}
+

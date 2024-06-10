@@ -1,18 +1,18 @@
-#navbar
-{
-    
-    display: flex;
-    gap: 15px;
-    justify-content: right;
-    padding-top: 10px;
-    
-}
+@import '../../../styles.scss';
 
-#cartbutton
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+.nav {
+    li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 15px;
+
+        a {
+            color: var(--surface-500);
+            cursor: pointer;
+
+            &:hover {
+                color: blue;
+            }
+        }
+    }
 }

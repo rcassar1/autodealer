@@ -1,0 +1,53 @@
+@import '../../../styles.scss';
+@import '../nav/nav.component.scss';
+
+
+.footer{
+    
+    margin-top: 25px;
+    height: 200px;
+    width: 100%;
+    background-color: #054261;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    .grid{
+        margin-left: 20px;
+        
+    }
+
+    &-text{
+        color: var(--surface-700);
+        margin-top: 50px;
+
+        h1{
+            margin: 0;
+            font-size: 3em;
+            font-weight: 400;
+        }
+
+        h2{
+            margin: 0;
+            font-size: 2em;
+            font-weight: 300;
+        }
+    }
+
+    .nav {
+        li {
+            a {            
+            margin-top: 160px;
+            font-size: 1.5em;
+                color: black;
+                cursor: pointer;
+    
+                &:hover {
+                    color: whitesmoke;
+                }
+            }
+        }
+    }
+
+
+}
+

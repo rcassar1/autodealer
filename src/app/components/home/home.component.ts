@@ -1,5 +1,5 @@
+import { Vehicle } from './../../models/vehicle';
 import { Component, OnInit } from '@angular/core';
-import { Vehicle } from '../../models/vehicle';
 import { VehicleService } from '../../services/vehicle.service';
 import { MaterialModule } from '../../materialmodule/material/material.module';
 import { CommonModule, JsonPipe } from '@angular/common';
@@ -14,15 +14,14 @@ import { PageEvent } from '@angular/material/paginator';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
+
+
 export class HomeComponent implements OnInit {
   pageSize: number = 4;
   pageIndex: number = 0;
   vehicles: Vehicle[] = [];
   vehiclesCount!: number;
-
-  /**
-   *
-   */
+  
   constructor(private service: VehicleService) {}
   ngOnInit(): void {
     this.getVehicles();
@@ -54,3 +53,9 @@ export class HomeComponent implements OnInit {
     }
   }
 }
+
+
+
+
+
+

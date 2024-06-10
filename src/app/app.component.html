@@ -1,5 +1,15 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div class="shell">
+    <app-header></app-header>
+    <app-banner></app-banner>
+        <div class="content">
+            <div class="grid">
+                <div class="p-col-5 col-5 content-text ">
+                    <router-outlet></router-outlet>
+                </div>
+             </div>
+        </div>
+        
+        <app-featured></app-featured>
 
-
-<app-nav></app-nav>
-<router-outlet />
+    <app-footer></app-footer>
+    </div>

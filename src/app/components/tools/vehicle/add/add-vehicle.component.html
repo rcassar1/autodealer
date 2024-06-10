@@ -1,0 +1,50 @@
+<div class="add-vehicle">
+<form class="example-form" [formGroup]="addVehicleForm" (submit)="submitAddVehicle()">
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Make</mat-label>
+      <input type="text" matInput formControlName="make">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Model</mat-label>
+        <input type="text" matInput formControlName="model">
+      </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+        <mat-label>Kilometers</mat-label>
+        <input type="text" matInput formControlName="kms">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Colour</mat-label>
+        <input type="text" matInput formControlName="colour">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        
+        <mat-label>Featured</mat-label>
+        <input type="text" matInput formControlName="featured">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>PhotoUrl</mat-label>
+        <input type="text" matInput formControlName="photoUrl">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Price</mat-label>
+        <input type="text" matInput formControlName="price">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Year</mat-label>
+        <input type="text" matInput formControlName="year">
+      </mat-form-field>
+
+
+    <input type="submit">
+  </form>
+</div>
+
+  

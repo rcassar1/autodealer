@@ -1,0 +1,10 @@
+@import '../../../styles.scss';
+@import '../nav/nav.component.scss';
+
+.form {
+
+    &-message{
+        width: 200px;
+        height: 200px;
+    }
+}

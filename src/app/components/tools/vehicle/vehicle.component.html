@@ -1,0 +1,34 @@
+<div class="add-vehicle">
+<form [formGroup]="form" class="form" title="add-vehicle" [title]="addVehicle" (ngSubmit)="onSubmit()">
+ <mat-form-field>
+    <mat-label>Make</mat-label>
+    <input matInput formControlName="make">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Model</mat-label>
+    <input matInput formControlName="model">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Kilometers</mat-label>
+    <input matInput formControlName="kms">
+  </mat-form-field>  <mat-form-field>
+    <mat-label>Colour</mat-label>
+    <input matInput formControlName="colour">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Featured</mat-label>
+    <input matInput formControlName="featured" [defaultValue]="false">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Year</mat-label>
+    <input matInput formControlName="year">
+  </mat-form-field>
+  <button mat-raised-button type="submit">Submit</button>
+ </form>
+</div>
+
+{{form.value | json}}

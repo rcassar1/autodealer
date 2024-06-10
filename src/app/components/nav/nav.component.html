@@ -1,23 +1,6 @@
-<div id="navbar" class="border-bottom p-1">
-  
-  <div float:left> logo</div>
-
-  <button mat-button color="primary">
-    <a [routerLink]="['']">Home</a>
-  </button>
-  
-  <button mat-button color="primary">
-    <a [routerLink]="['/about']">About</a>
-  </button>
-  
-  <button mat-button color="primary">
-    <a [routerLink]="['/login']">Login</a>
-  </button>
-  
-  <button mat-button color="primary">
-    <span class="material-symbols-outlined"> </span>
-    <a [routerLink]="['/cart']">
-      <span class="material-symbols-outlined"> shopping_cart_checkout</span>
-    </a>
-  </button>
-</div>
+<ul class="nav">
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/about">About Us</a></li>
+  <li><a routerLink="/showroom">SHOWROOM</a></li>
+  <li><a routerLink="/contact">Contact</a></li>
+</ul>

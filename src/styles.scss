@@ -1,6 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
 
+$primary-color: #ff3a00;
+$primary-color-dark: #af2900;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@import 'primeicons/primeicons';
+@import 'primeng/resources/themes/lara-light-blue/theme';
+@import 'primeng/resources/primeng';
+@import '../node_modules/primeflex/primeflex.scss';
+
+
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.app {
+    &-wrapper {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+        &-main {
+        width: calc(100% - 175px);
+        margin-left: 175px;
+    }
+
+    &-sidebar {
+        position: fixed;
+        width: 175px;
+        background-color: var(--blue-900);
+        height: 100%;
+        top: 0;
+
+        .logo {
+            padding: 20px;
+            width: 100%;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .links {
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: block;
+                    list-style: none;
+                    width: 100%;
+
+                    a {
+                        color: var(--surface-a);
+                        padding: 10px 15px;
+                        display: block;
+                        width: 100%;
+
+                        &:hover {
+                            background-color: var(--blue-700);
+                        }
+
+                        i {
+                            margin-right: 8px;
+                            margin-top: 0;
+                            float: left;
+                        }
+
+                        &.logout {
+                            color: var(--blue-500);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &-page {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+
+body,
+.p-component {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    @include reset-list();
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-a{ text-decoration: none; color: inherit;}

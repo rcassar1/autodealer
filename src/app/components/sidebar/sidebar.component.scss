@@ -1,0 +1,49 @@
+.admin {
+
+    &-sidebar {
+        width: 175px;
+        background-color: var(--blue-900);
+        height: 100%;
+        top: 0;
+        border-radius: 15px;
+
+        .links {
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: block;
+                    list-style: none;
+                    width: 100%;
+
+                    a {
+                        color: var(--surface-a);
+                        padding: 10px 15px;
+                        display: block;
+                        width: 100%;
+
+                        &:hover {
+                            background-color: var(--blue-700);
+                        }
+
+                        i {
+                            margin-right: 8px;
+                            margin-top: 0;
+                            float: left;
+                        }
+
+                        &.logout {
+                            color: var(--blue-500);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &-page {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
