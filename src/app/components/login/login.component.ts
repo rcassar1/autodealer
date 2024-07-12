@@ -1,27 +1,30 @@
+import { AdminComponent } from './../admin/admin.component';
 import { Component } from '@angular/core';
 import { MatCard, MatCardActions, MatCardContent, MatCardTitle } from '@angular/material/card';
 import { MatFormField, MatFormFieldControl, MatLabel } from '@angular/material/form-field';
 import { MatToolbar } from '@angular/material/toolbar';
-import { Router, RouterLink } from '@angular/router';
-import path from 'path';
-import { AdminComponent } from '../admin/admin.component';
-import { routes } from '../../app.routes';
+import { Router, RouterModule } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
   providers: [],
-  imports: [MatCard, MatCardActions, MatCardContent, MatCardTitle, MatFormField, MatToolbar, MatLabel,],
+  imports: [MatCard, MatCardActions, MatCardContent, MatCardTitle, MatFormField, MatToolbar, MatLabel, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-router: any;
+
+  constructor(public router: Router){ 
+
+  }
 
 //login auth and redirect to /admin
 login () {
 
-  return this.router.navigate (['/admin']);
+  this.router.navigate(['/admin']);
  
 } 
 

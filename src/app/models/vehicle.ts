@@ -9,11 +9,12 @@ export class Vehicle {
   price: number;
   year: number;
 
+
   /**
    *
    */
   constructor(
-    id: string,
+    id: string | null,
     make: string,
     model: string,
     kms: number,

@@ -1,0 +1,18 @@
+<mat-card class="m-1">
+    <mat-card-header>
+      <mat-card-title> {{vehicle._id}} {{vehicle.make}} {{vehicle.model}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo">
+    <div class="buttons">
+    <mat-card-actions><a [routerLink]="[ '/vehicle', vehicle._id]">
+      <button mat-button>Details</button></a>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button mat-button routerLink="/editvehicle/{{vehicle._id}}" >Edit</button>
+    </mat-card-actions>
+    <mat-card-actions>
+        <button mat-button (click)="deleteVehicle(vehicle._id)">Delete</button>
+      </mat-card-actions>
+  </div>
+  </mat-card>
+  

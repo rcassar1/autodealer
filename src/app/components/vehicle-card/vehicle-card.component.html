@@ -1,9 +1,8 @@
 <mat-card class="m-1">
     <mat-card-header>
       <mat-card-title>{{vehicle.make}} {{vehicle.model}}</mat-card-title>
-      <mat-card-subtitle>{{vehicle.kms}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="vehicle.photoUrl ? vehicle.photoUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg'" alt="Photo">
     <div class="buttons">
     <mat-card-actions><a [routerLink]="[ '/vehicle', vehicle._id]">
       <button mat-button>Details</button></a>

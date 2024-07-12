@@ -1,1 +1,24 @@
-<p>find-delete works!</p>
+
+<div class="wrapper">
+    <div class="d-flex flex-row flex-wrap">
+        <ng-container *ngFor="let auto of vehicles">
+            <div class="w-25">
+                <app-admin-vehicle-card [vehicle]="auto">
+                <button>Edit</button>
+            </app-admin-vehicle-card>
+
+            </div>
+        </ng-container>
+      </div>
+
+    <mat-paginator
+        (page)="handlePageEvent($event)"
+        [length]="vehiclesCount"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[4, 8, 12, 16]"
+        aria-label="Select page">
+    </mat-paginator>
+
+</div>
+
+  

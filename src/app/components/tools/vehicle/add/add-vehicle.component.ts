@@ -14,6 +14,9 @@ import { Vehicle } from '../../../../models/vehicle';
 })
 export class AddVehicleComponent {
 
+  selectedFile: File | null = null;
+  imagePreview: string | ArrayBuffer | null = null;
+
   constructor(private service: VehicleService) {}
 
   addVehicleForm = new FormGroup ({
@@ -27,10 +30,24 @@ export class AddVehicleComponent {
     year: new FormControl(),
   })
 
-  submitAddVehicle() {
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+
+      // Preview the image
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagePreview = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+  async submitAddVehicle() {
     var temp = this.addVehicleForm.value;
     var tempVehicle = new Vehicle(
-      '',
+      null,
       temp.make!,
       temp.model!,
       temp.kms!,
@@ -40,8 +57,32 @@ export class AddVehicleComponent {
       temp.price!,
       temp.year!,
     );
+  
     console.log(tempVehicle);
-    this.service.create(tempVehicle).subscribe();
+    tempVehicle.photoUrl = await this.getImageUrl();
+    this.service.create(tempVehicle).subscribe( res =>{
+      console.log('res ' , res);
+    });
+  }
+  
+  getImageUrl(): Promise<string> {
+    const formData = new FormData();
+    if (this.selectedFile) {
+      formData.append('photo', this.selectedFile, this.selectedFile.name);
+    }
+  
+    return new Promise((resolve, reject) => {
+      this.service.addVehicleImage(formData).subscribe({
+        next: response => {
+          console.log(response);
+          resolve(response.photoUrl);
+        },
+        error: err => {
+          console.error(err);
+          reject(err);
+        }
+      });
+    });
   }
 
 }

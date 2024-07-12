@@ -11,6 +11,8 @@ import { NewUserComponent } from './components/tools/user/new-user/new-user.comp
 import { ShowroomComponent } from './components/showroom/showroom.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { FindDeleteComponent } from './components/tools/vehicle/find-delete/find-delete.component';
+import { VehicleEditComponent } from './components/tools/vehicle/vehicle-edit/vehicle-edit.component';
 
 export const routes: Routes = [
   {
@@ -39,8 +41,12 @@ export const routes: Routes = [
     component: VehiclepageComponent,
   },
   {
-    path: 'editvehicle',
-    component: EditVehicleComponent,
+    path: 'editvehicle/:id',
+    component: VehicleEditComponent,
+  },
+  {
+    path: 'finddeletevehicle',
+    component: FindDeleteComponent,
   },
   {
     path: 'addvehicle',

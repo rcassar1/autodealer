@@ -1,8 +1,7 @@
-import { title } from 'process';
+import { Vehicle } from './../models/vehicle';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Vehicle } from '../models/vehicle';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -15,6 +14,10 @@ export class VehicleService extends BaseService<Vehicle> {
   baseUrl='http://localhost:4000/vehicles';
   getById(id: string): Observable<Vehicle> {
     return this.http.get<Vehicle>(`${this.baseUrl}/id/${id}`);
+  }
+
+  getAll(): Observable<Vehicle> {
+    return this.http.get<Vehicle>(`${this.baseUrl}/getall`);
   }
 
   getFeatured(): Observable<Vehicle[]> {
@@ -40,12 +43,24 @@ export class VehicleService extends BaseService<Vehicle> {
   
   
   ): Observable<Vehicle> {
-    let post_object = {id, make, model, kms, colour, featured, price, year};
-    return this.http.post<Vehicle>('http://localhost:4000/add', post_object);
+    let post_object = {make, model, kms, colour, featured, price, year};
+    return this.http.post<Vehicle>('http://localhost:4000/vehicles/add', post_object);
+  }
+
+  addVehicleImage(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/image`, formData);
   }
 
   create (object: Vehicle): Observable <Vehicle> {
-    return this.http.post<Vehicle>('http://localhost:4000/add', object);
+    return this.http.post<Vehicle>('http://localhost:4000/vehicles/add', object);
+  }
+
+  delete (_id: any): Observable <Vehicle> {
+    return this.http.delete<Vehicle>('http://localhost:4000/vehicles/delete/'+_id)
+  }
+
+  update (_id: any, tempVehicle: Vehicle): Observable<Vehicle> {
+    return this.http.post<Vehicle>('http://localhost:4000/vehicles/update/'+_id, tempVehicle)
   }
 
 }
