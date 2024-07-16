@@ -1,7 +1,7 @@
 <div class="featured">
   <h2>FEATURED VEHICLES</h2>
-  <div class="d-flex flex-wrap ">
-  <mat-card class="w-25" *ngFor="let car of featuredVehicles">
+  <div class="d-flex flex-wrap">
+  <mat-card class="col-3 p-1" *ngFor="let car of featuredVehicles">
     <mat-card-header>
       <mat-card-title>{{ car.make }} {{ car.model }}</mat-card-title>
       <mat-card-subtitle>{{ car.kms }}</mat-card-subtitle>
