@@ -1,4 +1,4 @@
-import { MatFormField,  MatLabel } from '@angular/material/form-field';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { Component } from '@angular/core';
 import {
   MatCard,
@@ -45,17 +45,16 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './new-user.component.scss',
 })
 export class NewUserComponent {
-
   constructor(private service: UserService) {}
 
   addUserForm = new FormGroup({
-    name: new FormControl(),
-    lastName: new FormControl(),
-    address: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl(),
-    isAdmin: new FormControl(),
-  })
+    name: new FormControl(''),
+    lastName: new FormControl(''),
+    address: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+    isAdmin: new FormControl(true),
+  });
 
   onSubmit() {
     var temp = this.addUserForm.value;
@@ -66,10 +65,9 @@ export class NewUserComponent {
       temp.address!,
       temp.email!,
       temp.password!,
-      temp.isAdmin
+      true
     );
     console.log(tempUser);
     this.service.create(tempUser).subscribe();
   }
-
 }
